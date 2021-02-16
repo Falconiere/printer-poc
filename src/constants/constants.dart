@@ -1,4 +1,4 @@
 class Constants {
   final String apiUrl;
-  Constants({this.apiUrl = "https://api.savvydine.com"});
+  Constants({this.apiUrl = "https://localhost.com"});
 }
