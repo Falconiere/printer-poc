@@ -7,10 +7,6 @@ import '../../components/button.dart';
 import '../../services/printer.dart';
 
 class Printer extends StatelessWidget {
-  void testReceipt(NetworkPrinter printer) {
-    printDemoReceipt(printer);
-  }
-
   Future<bool> printSample() async {
     const PaperSize paper = PaperSize.mm58;
     final profile = await CapabilityProfile.load();
@@ -19,7 +15,7 @@ class Printer extends StatelessWidget {
     final PosPrintResult res =
         await printer.connect('192.168.0.123', port: 9100);
     if (res == PosPrintResult.success) {
-      testReceipt(printer);
+      printDemoReceipt(printer);
       printer.disconnect();
       return true;
     }
